@@ -62,8 +62,6 @@ define Package/pptpd/install
 	$(INSTALL_BIN) ./files/pptpd.init $(1)/etc/init.d/pptpd
 	$(INSTALL_DIR) $(1)/etc/ppp
 	$(INSTALL_DATA) ./files/options.pptpd $(1)/etc/ppp/
-	$(INSTALL_DIR) $(1)/etc/config
-	$(INSTALL_DATA) ./files/pptpd.config $(1)/etc/config/pptpd
 endef
 
 $(eval $(call BuildPackage,pptpd))

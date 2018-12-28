@@ -461,8 +461,6 @@ define Package/strongswan/install
 	$(CP) $(PKG_INSTALL_DIR)/usr/lib/ipsec/libstrongswan.so.* $(1)/usr/lib/ipsec/
 	$(INSTALL_CONF) ./files/ipsec.secrets $(1)/etc/
 	$(INSTALL_CONF) ./files/ipsec.user $(1)/etc/
-	$(INSTALL_DIR) $(1)/etc/init.d
-	$(INSTALL_BIN) ./files/ipsec.init $(1)/etc/init.d/ipsec
 endef
 
 define Package/strongswan-default/install
