@@ -62,9 +62,9 @@ define Package/zerotier/install
 	$(LN) zerotier-one $(1)/usr/bin/zerotier-cli
 	$(LN) zerotier-one $(1)/usr/bin/zerotier-idtool
 
-	ifeq ($(CONFIG_ZEROTIER_ENABLE_SELFTEST),y)
-		$(INSTALL_BIN) $(PKG_BUILD_DIR)/zerotier-selftest $(1)/usr/bin/
-	endif
+ifeq ($(CONFIG_ZEROTIER_ENABLE_SELFTEST),y)
+	$(INSTALL_BIN) $(PKG_BUILD_DIR)/zerotier-selftest $(1)/usr/bin/
+endif
 
 	$(INSTALL_DIR) $(1)/etc/config
 	$(INSTALL_CONF) files/zerotier.config $(1)/etc/config/zerotier
